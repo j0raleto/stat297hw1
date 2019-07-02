@@ -9,3 +9,9 @@ highlight: tango
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+#Introduction
+
+#Group members
+##Laura
+##Adrien
+##Natalia
