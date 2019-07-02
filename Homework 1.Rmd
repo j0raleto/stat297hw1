@@ -1,8 +1,13 @@
 ---
 title: "Homework 1"
-output: html_document
-theme: cerulean
-highlight: tango
+output:
+  html_document:
+    toc: true
+    number_sections: true
+    theme : cerulean
+    highlight : tango
+
+
 
 ---
 
@@ -15,7 +20,49 @@ knitr::opts_chunk$set(echo = TRUE)
 #Introduction
 
 #Group members
+
+Generally, we like Shia Labeouf and his muscles:  
+
+<iframe width='560' height='315' src='https://www.youtube.com/embed/ZXsQAXx_ao0' frameborder='0' allowfullscreen></iframe>
+  
 ##Laura
+
+Laura is a data scientist. She loves the alps, swiss chocolate and red wine.
+
+
+
+[<img width='500' height='250' src="https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-9/40627307_10160635621325580_7061354893834977280_o.jpg?_nc_cat=108&_nc_oc=AQnfNFRjf_Ss0mud3i9fs8EA82Syra-ZXwxhN8Og08MAY--blqZY-TnGdqcfohcPqKc&_nc_ht=scontent.flux1-1.fna&oh=f91fd3554e3cda4e803a6f5a9a6f59a6&oe=5DC464CF&dl=1"></img>](https://www.facebook.com)
+
+*Picture of Laura in the old city of Geneva*
+
+* **Favourite poem**: 
+
+"*I will hold you until you fall asleep*
+
+*What if I don't fall asleep?*
+
+*I will hold you*"
+
+by Trygve Skaug
+
+
+* **Favourite equation**: 
+
+* **Favourite cup**:
+
+* **Favourite classes followed this semester**
+
+1. Machine learning
+
+2. Web Data and and Digital Analytics
+
+3. Technologies and Architecture for Data 
+
+
+
+
+
+
 ##Adrien
 ##Natalia
 
