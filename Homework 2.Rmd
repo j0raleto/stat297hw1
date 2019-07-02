@@ -1,0 +1,44 @@
+---
+title: "Homework 2"
+author: "Adrien, Natalia, Laura"
+date: "7/2/2019"
+output: html_document
+
+---
+
+The objectives of this homework assignment are the following:
+
+* Learn how program effectively using if/else and iterations statements;
+* Become familiar with using data frame objects and mapping packages;
+* Constructing a portfolio;
+* Become familiar with GitHub and using it as a collaborative tool.
+
+This project must be done using GitHub and respect the following requirements:
+
+1. Each member of the group must commit at least once.
+2. All commit messages must be reasonably clear and meaningful.
+3. Your GitHub repository must include at least one issue containing some form of a TO DO list.
+
+#Problem 1: Fizz Buzz
+
+Write a program that prints the numbers from 1 to 1000. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
+```{r}
+a =1:1000
+number=0
+for (i in 1:length(a)) {
+  if (a[i]%%3==0 & a[i]%%5==0){
+    print(paste(a[i],"FizzBuzz"))
+  }else if(a[i]%%3==0){
+    print(paste(a[i],"Fizz"))
+  }else if(a[i]%%5==0){
+    print(paste(a[i],"Buzz"))
+  }else{
+    print(paste(a[i],"is not divisable by neither 3 nor 5"))
+  }
+}
+  
+
+```
+
+
+# Problem 2 
