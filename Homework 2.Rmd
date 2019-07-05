@@ -41,4 +41,112 @@ for (i in 1:length(a)) {
 ```
 
 
-# Problem 2 
+# Problem 2 Random Walk
+
+```{r}
+# number of steps 
+
+steps <- 10^4
+set.seed(1982)
+Ut <- runif(steps)
+
+# the probability to chose any 6 direction
+probs <- c(0.1666667,0.3333334,0.5000001,0.6666668,0.8333335)
+
+
+step_direction <- matrix(0, steps+1, 3) # 3* possible directions
+
+for(i in seq(2,steps+1)){
+  # draw a random number from a uniform distribution
+  rn = Ut[i-1]
+  
+  # go right if the rn is less than 0.14
+  if(rn < probs[1]){step_direction[i,1] = 1}
+  
+  # go left if the rn is between 0.14 & 0.28
+  if(rn >= probs[1] & rn < probs[2]) {step_direction[i,1] = -1}
+  
+  # go forward if the rn is between 0.28 & 0.42
+  if(rn >= probs[2] & rn < probs[3]) {step_direction[i,2] = 1}
+  
+   # go backward if the rn is between 0.42 & 0.57
+  if(rn >= probs[3] & rn < probs[4]) {step_direction[i,2] = -1}
+  
+   # go up if the rn is between 0.57 & 0.71
+  if(rn >= probs[4] & rn < probs[5]) {step_direction[i,3] = 1}
+   # go down if the rn is above 85
+  
+  if(rn > probs[5]) {step_direction[i,3] = -1}
+  
+}
+step_direction[,1]
+
+
+# Cumulative steps
+position = data.frame(x = cumsum(step_direction[, 1]), 
+                      y = cumsum(step_direction[, 2]),
+                      z = cumsum(step_direction[, 3]))
+position[10001,]
+
+
+```
+
+
+# Problem 3  maps 
+
+
+```{r}
+
+# Make Map using google API Key 
+
+teams = c("Real Madrid", "FC Barcelona","Atlético Madrid","Athletic Bilbao","Valencia")
+champions = c(33,25,10,8,6)
+city = c("Madrid","Barcelona","Madrid","Bilbao","Valencia")
+
+data <- data.frame(teams,champions,city)
+str(data)
+
+# Make map with google project and API keys: 
+library(ggmap)
+#register_google(key = "AIzaSyAVXK2pniRWbD9oGppEpz0poQFl_w-axTU", write=TRUE)
+lat_long = geocode(city)
+lat_long
+
+
+# Make Map Manually 
+
+
+lat_long[1,] <- c(-3.703630,40.414618) # Madrid 
+
+lat_long[2,] <- c( 2.177950,41.391378) # Barcelona
+lat_long[3,] <- c(-3.703630,40.414618) # Madrid
+lat_long[4,] <- c( -2.932364, 43.261062) # Bilbao
+lat_long[5,] <- c( -0.366909,39.456967) # Valencia
+
+lat_long
+ (map <- get_map(c(left=-12.5, bottom = 35, right=5.5, top=45)))
+p = ggmap(map,extent = "device")
+p + geom_point(data = lat_long, aes(x=lon, y=lat, size=champions, col=teams), alpha = 1)
+```
+
+
+# Problem 3 Random walk 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
