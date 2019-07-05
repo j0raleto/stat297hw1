@@ -10,7 +10,36 @@ runtime: shiny
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This R Markdown document is made interactive using Shiny. Unlike the more traditional workflow of creating static reports, you can now create documents that allow your readers to change the assumptions underlying your analysis and see the results immediately. 
+Goal
+
+The goal of this homework is for you to program a function that would compute π̂ . Your function should be called find_pi() and should have three inputs, i.e.
+
+B: the number of points (use 5000 as default value),
+seed: a number to control the generation of random numbers (use 10 as default value),
+make_plot: a Boolean value to control whether or not a graph should be made (see below for details and use TRUE as default).
+
+
+## Laura's inputs and outputs
+
+```{r}
+
+
+find_pi = function(B = 5000, seed = 10, make_plot = TRUE){
+  # Control seed
+  set.seed(seed)
+  
+  # Simulate B points
+  point = matrix(runif(2*B, -1, 1), B, 2)
+  
+ ...
+ 
+ return(hat_pi)
+} 
+
+```
+
+
+
 
 To learn more, see [Interactive Documents](http://rmarkdown.rstudio.com/authoring_shiny.html).
 
@@ -35,6 +64,11 @@ renderPlot({
   lines(dens, col = "blue")
 })
 ```
+
+
+
+
+
 
 ## Embedded Application
 
