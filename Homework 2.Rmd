@@ -108,7 +108,7 @@ str(data)
 
 # Make map with google project and API keys: 
 library(ggmap)
-#register_google(key = "AIzaSyAVXK2pniRWbD9oGppEpz0poQFl_w-axTU", write=TRUE)
+#register_google(key = "", write=TRUE)
 lat_long = geocode(city)
 lat_long
 
@@ -130,7 +130,7 @@ p + geom_point(data = lat_long, aes(x=lon, y=lat, size=champions, col=teams), al
 ```
 
 
-# Problem 3 Random walk 
+# Problem 
 
 
 
