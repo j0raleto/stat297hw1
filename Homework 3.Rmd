@@ -23,18 +23,44 @@ make_plot: a Boolean value to control whether or not a graph should be made (see
 
 ```{r}
 
-
+install.packages("plotrix")
+library(plotrix)
 find_pi = function(B = 5000, seed = 10, make_plot = TRUE){
   # Control seed
   set.seed(seed)
   
   # Simulate B points
+
   point = matrix(runif(2*B, -1, 1), B, 2)
+  head(point)
+  pin = sum(ifelse(sqrt(point[,1]^2 + point[,2]^2 <= 1),1,0))
   
+  for(i in 1:B){
+    if(sqrt(point[,1]^2 + point[,2]^2 <= 1) {col="red"
+    } else {
+        col="blue"
+      }
+  }
+  
+  
+  
+    cols <- rev(hcl(h = seq(15, 375, length = 3), l = 65, c = 100)[1:2])
+    
+?rev
+
+  plot(point[,1],point[,2], xlim = c(-1, 1), ylim = c(-1, 1), xlab = "x", ylab = "y")
+  draw.circle(0, 0, 1, nv = 1000, border = NULL, col = NA, lty = 1, lwd = 1)
+  
+  4 * pin/B
+  
+
+
  ...
  
  return(hat_pi)
 } 
+
+find_pi(make_plot = TRUE)
 
 ```
 
